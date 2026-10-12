@@ -1,0 +1,8 @@
+Words written in Latin letters that guests and the NPC are likely to use in Japanese chat. prune_text_vocabulary.py keeps the tokens these are written with when it drops the long English words.
+
+VRChat VRC VR Unity Udon Quest PC Steam Discord Twitter YouTube Booth Meta Pico Index
+OK NG AI LLM NPC GPU CPU FPS BGM SNS URL ID DM PV MV CM DIY
+Wi-Fi WiFi iPhone Android Windows Mac Google Amazon
+Hello Hi Thanks Thank you Sorry Yes No Please Good Nice Cute Cool Bye Welcome
+coffee tea water menu cake cupcake muffin croissant milk sugar latte espresso cafe counter table
+Akane

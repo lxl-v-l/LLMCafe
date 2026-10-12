@@ -1,0 +1,98 @@
+クレジット / Credits
+
+■ モデル / Models
+
+decider-0.8b (Mapika)
+  用途：判断
+  ライセンス：Apache License 2.0
+  配布元：https://huggingface.co/Mapika/decider-0.8b
+  リビジョン：a0a01d6f8135298f400a8c856b355793012ae971
+  ベースモデル：Qwen3.5-0.8B-Base (Qwen Team, Alibaba Cloud)
+  変更点：Q4_0で量子化し、語彙を47,462トークンに削減したうえで、ShaderGPT用のテクスチャに変換しています。追加学習はしていません。
+  Changes: quantized to Q4_0, vocabulary pruned to 47,462 tokens, converted to ShaderGPT textures. No additional training.
+  NOTICEファイル：なし
+
+LFM2.5-1.2B-JP-202606 (Liquid AI)
+  用途：注文の読み取りと返事の生成
+  ライセンス：LFM Open License v1.0
+  配布元：https://huggingface.co/LiquidAI/LFM2.5-1.2B-JP-202606-GGUF
+  リビジョン：448ba3f7d408c2f5c32cec8038612f7c1ed9f054
+  元のファイル：LFM2.5-1.2B-JP-202606-Q4_0.gguf
+  SHA256：9551fbaab0ced12f17f4070d2f7e36d0d9952750a8bde616137a91323f6afa9d
+  変更点：トークン埋め込みをQ6_KからQ4_0に再量子化し、語彙をテキストトークン17,013個に削減しています。トークナイザも同じ語彙で作り直しました。そのうえでShaderGPT用のテクスチャに変換しています。追加学習はしていません。
+  Changes: token embeddings requantized from Q6_K to Q4_0, vocabulary pruned to 17,013 text tokens with the tokenizer rebuilt to match, converted to ShaderGPT textures. No additional training.
+  NOTICEファイル：なし
+
+MioTTS-0.4B (Aratako)
+  用途：音声合成（テキストから音声トークンを生成）
+  ライセンス：LFM Open License v1.0
+  配布元：https://huggingface.co/Aratako/MioTTS-0.4B (Q4_0 GGUF)
+  ベースモデル：LFM2-350M (Liquid AI)
+  変更点：語彙をテキストトークン17,013個と音声トークンに削減し、ShaderGPT用のテクスチャに変換しています。追加学習はしていません。
+  Changes: vocabulary pruned to 17,013 text tokens plus the speech tokens, converted to ShaderGPT textures. No additional training.
+
+MioCodec-25Hz-44.1kHz-v2 (Aratako)
+  用途：音声合成（音声トークンから波形を生成）
+  ライセンス：MIT License　Copyright (c) 2026 Aratako
+  配布元：https://huggingface.co/Aratako/MioCodec-25Hz-44.1kHz-v2
+  変更点：デコーダのみを使用しています。話者を1人に固定して重みに統合し、8bitで量子化したうえで、ShaderGPT用のテクスチャに変換しています。
+  Changes: decoder only. One fixed speaker merged into the weights, quantized to 8 bits, converted to ShaderGPT textures.
+
+茜犬の声 / The NPC's voice
+  合成音声です。Supertonic 3 (Supertone, OpenRAIL-M) の同梱ボイス「F1」で合成した音声のピッチを上げ、その音声から話者埋め込みを作成しました。MioTTS同梱の話者プリセットは使用していません。
+  Synthetic. The speaker embedding was made from audio synthesized with Supertonic 3's bundled voice F1, raised in pitch. MioTTS's bundled presets are not used.
+
+■ 推論エンジン / Inference engine
+
+ShaderGPT (lox9973)
+  ライセンス：MIT License
+  配布元：https://gitlab.com/lox9973/ShaderGPT
+  コミット：99bf46ed6ccdb4ada05526ea115a315b56e00f88
+  変更点：GPTGenerator、GPTTokenizer、Reduceシェーダーを改変し、MioCodecのデコーダを追加しています。
+  Changes: GPTGenerator, GPTTokenizer and the Reduce shader modified, a MioCodec decoder added.
+
+■ アバターと衣装 / Avatar and outfit
+
+Akane ver.1.0 (minto_akayama)
+  ライセンス：CC0（VRMのライセンス情報による）
+
+AtelierStaff (アトリエミオリ)　©アトリエミオリ
+  用途：店員の衣装
+  ライセンス：アトリエミオリ3Dモデル利用規約（VN3ライセンス）
+  配布元：https://booth.pm/ja/items/8358079
+  変更点：しなの用をMochiFitterで茜犬の素体に合わせ、羽ペンとメニューのギミックを外しています。
+
+■ フォント / Font
+
+M PLUS Rounded 1c
+  ライセンス：SIL Open Font License 1.1
+  Copyright 2016 The Rounded M+ Project Authors
+
+■ ギミック / Gimmicks
+
+LuraSwitch2：©QuickBrown
+Visitors Information Board：ヨシヲ (@yoshio_will)
+QvPen：ureishi（ペンのモデル：powass、シェーダー：phi16）
+アナログ時計：さやまめ（Udonプログラム）、東京アザラシセンター（モデル）
+UdonSharp：MerlinVR
+
+■ BGM
+
+アイスコーヒー、デカフェで！！ (しんさんわーくす)
+  配布元：OpenTracks（旧DOVA-SYNDROME） https://opentracks.com/bgm/detail/10238
+  ライセンス：OpenTracks 音源利用ライセンス
+
+■ 3Dモデル・テクスチャ・効果音 / 3D models, textures, sounds (CC0)
+
+Kenney：Furniture Kit、Food Kit、Mini Market (https://kenney.nl)
+Poly Haven：照明・植物・小物のモデル、床・壁・天板のテクスチャ、HDRI「canary_wharf」 (https://polyhaven.com)
+ambientCG：Tiles010、Wood027 (https://ambientcg.com)
+BigSoundBank：Counter Bell #1 (https://bigsoundbank.com)
+
+■ 注意 / Notes
+
+店員の判断・返事・音声はAIが生成しています。内容が誤っている場合があります。
+出力フィルタは簡易的なもので、不適切な発言を完全には防げません。
+送信した文章・表示名・返事は、同じインスタンスにいる全員に表示されます。
+The NPC's decisions, replies and voice are AI-generated and can be wrong. The output filter is best-effort.
+Messages you send, your display name and the replies are visible to everyone in the instance.
